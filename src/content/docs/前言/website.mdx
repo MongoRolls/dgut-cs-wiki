@@ -1,0 +1,75 @@
+---
+title: 网站相关&框架相关
+description: 网站相关&框架相关
+---
+
+网站使用 Astro 框架
+Starlight 主题
+
+Astro 官网：[https://astro.build/](https://astro.build/)
+Starlight 官网：[https://starlight.astro.build/](https://starlight.astro.build/)
+
+## 为什么选择 Astro 框架
+
+- 快速
+- 灵活
+- 可扩展
+- 可维护
+
+可加入 react,vue,svelte,solid 等框架
+
+## [组件文档](https://starlight.astro.build/zh-cn/guides/components/)
+
+import { Badge } from '@astrojs/starlight/components';
+import { Icon } from '@astrojs/starlight/components';
+import { FileTree } from '@astrojs/starlight/components';
+import { Steps } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<br />
+<Icon name="open-book" />
+<Icon name="open-book" />
+<Icon name="open-book" />
+
+<br />
+
+<Badge text="注释" variant="note" />
+<Badge text="成功" variant="success" />
+<Badge text="提示" variant="tip" />
+<Badge text="注意" variant="caution" />
+<Badge text="危险" variant="danger" />
+
+<br />
+
+<FileTree>
+
+- astro.config.mjs
+- package.json
+- src
+  - components
+    - Header.astro
+    - Title.astro
+  - pages/
+
+</FileTree>
+
+<br />
+
+<Steps>
+
+1. 将组件导入到 MDX 文件中：
+
+   ```js
+   import { Steps } from '@astrojs/starlight/components';
+   ```
+
+2. 用 `<Steps>` 将你的有序列表包裹起来。
+
+</Steps>
+
+<br />
+
+<Tabs>
+  <TabItem label="恒星">天狼星，织女星，参宿四</TabItem>
+  <TabItem label="卫星">木卫一，木卫二，木卫三</TabItem>
+</Tabs>

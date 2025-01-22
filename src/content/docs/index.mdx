@@ -1,36 +1,44 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
+title: DGUT CS WIKI
+description: 莞工计算机学习指南
+head:
+  - tag: title
+    content: DGUT CS WIKI - 莞工计算机学习指南
+  - tag: meta
+    attrs:
+      name: description
+      content: 莞工计算机学习指南，包含课程资源、学习路线等
 template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: 学而思不足！
   image:
-    file: ../../assets/houston.webp
+    file: ../../assets/logo.png
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Getting Started
+      link: /前言
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+      variant: primary
+    - text: 实习就业群
+      link: /test.png
       icon: external
-      variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
-
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+  <Card title="大学规划，成功案例" icon="pencil">
+    竞赛？考研？找工作？考公？留学？你想了解的，这里都有成功案例，助力你冲击名校和大厂。
+  </Card>
+
+  <Card title="工程开发，学习路线" icon="setting">
+    前端开发、后端开发和人工智能学习路线和课程推荐，点亮全部技能树，补齐教学短板。
+  </Card>
+
+  <Card title="学习疑阵，随时答疑" icon="information">
+    如果你在学习过程中遇到了任何问题，加入我们的学习矩阵，群内大佬随时在线答疑。
+  </Card>
+
+   <Card title="学科课程，免费精选" icon="open-book">
+    莞工计算机系相关学科课程的资源推荐和学习建议，拒绝选择困难，全套资源均免费获取，放心食用。
+  </Card>
 </CardGrid>
