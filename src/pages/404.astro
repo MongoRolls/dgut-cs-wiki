@@ -1,0 +1,53 @@
+---
+import { Image } from 'astro:assets';
+import 'tailwindcss/tailwind.css';
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - 页面未找到</title>
+  </head>
+  <body class="bg-slate-50 dark:bg-slate-900 min-h-screen flex items-center justify-center p-4">
+    <main class="text-center">
+      <div class="space-y-4">
+        <h1 class="text-6xl font-bold text-slate-800 dark:text-slate-200">404</h1>
+        <p class="text-xl text-slate-600 dark:text-slate-400">
+          啊哦，页面好像迷路了 (；′⌒`)
+        </p>
+        <div class="mt-8">
+          <a
+            href="/"
+            class="inline-flex items-center gap-2 px-6 py-2 text-sm font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors"
+          >
+            <span>返回首页</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      // 检查暗色模式
+      if (
+        localStorage.theme === 'dark' ||
+        (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
+  </body>
+</html> 
