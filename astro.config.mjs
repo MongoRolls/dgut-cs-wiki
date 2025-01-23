@@ -2,16 +2,21 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import mdx from '@astrojs/mdx';
+import react from '@astrojs/react';
 import starlightHeadingBadges from 'starlight-heading-badges';
+import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
   integrations: [
+    react(),
     starlight({
       title: 'DGUT CS WIKI',
       social: {
-        github: 'https://github.com/withastro/starlight'
+        github: 'https://github.com/MongoRolls/dgut-cs-wiki'
       },
       plugins: [starlightHeadingBadges()],
+      customCss: ['./src/tailwind.css'],
+
       sidebar: [
         {
           label: '📖 前言',
@@ -69,12 +74,12 @@ export default defineConfig({
           collapsed: true,
           autogenerate: { directory: '考公留学' }
         }
-      ],
-      components: {
-        // 改为 Pagination
-        Pagination: './src/components/starlight/Pagination.astro'
-      }
+      ]
     }),
-    mdx()
+    mdx(),
+    tailwind({
+      // 禁用默认的基础样式
+      applyBaseStyles: false
+    })
   ]
 });
