@@ -53,6 +53,9 @@ importers:
       starlight-heading-badges:
         specifier: ^0.4.0
         version: 0.4.0(@astrojs/starlight@0.31.1(astro@5.1.8(jiti@1.21.7)(rollup@4.31.0)(sass-embedded@1.83.4)(typescript@5.7.3)(yaml@2.7.0)))
+      starlight-image-zoom:
+        specifier: ^0.10.1
+        version: 0.10.1(@astrojs/starlight@0.31.1(astro@5.1.8(jiti@1.21.7)(rollup@4.31.0)(sass-embedded@1.83.4)(typescript@5.7.3)(yaml@2.7.0)))
       starlight-site-graph:
         specifier: ^0.2.0
         version: 0.2.0(@astrojs/starlight@0.31.1(astro@5.1.8(jiti@1.21.7)(rollup@4.31.0)(sass-embedded@1.83.4)(typescript@5.7.3)(yaml@2.7.0)))(astro@5.1.8(jiti@1.21.7)(rollup@4.31.0)(sass-embedded@1.83.4)(typescript@5.7.3)(yaml@2.7.0))
@@ -2553,6 +2556,12 @@ packages:
 
   starlight-heading-badges@0.4.0:
     resolution: {integrity: sha512-qHxbZcqaz+01y/XKuA5xfbTncUl5Vo0/kY0f+Wi+xvuJ8MUDefZHhL2io3KdoR0ekRDn8COtj/hwE+zL+QcEGA==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@astrojs/starlight': '>=0.30.0'
+
+  starlight-image-zoom@0.10.1:
+    resolution: {integrity: sha512-1uEwijShhFFcYA++lDmFV32WmZkpp/VMvD4+PC5h+7InnyPGMiT+mSVJzbddNEit44OxM5kxbO6/OqcBtjKpOA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@astrojs/starlight': '>=0.30.0'
@@ -6061,6 +6070,13 @@ snapshots:
       unist-util-visit: 5.0.0
     transitivePeerDependencies:
       - supports-color
+
+  starlight-image-zoom@0.10.1(@astrojs/starlight@0.31.1(astro@5.1.8(jiti@1.21.7)(rollup@4.31.0)(sass-embedded@1.83.4)(typescript@5.7.3)(yaml@2.7.0))):
+    dependencies:
+      '@astrojs/starlight': 0.31.1(astro@5.1.8(jiti@1.21.7)(rollup@4.31.0)(sass-embedded@1.83.4)(typescript@5.7.3)(yaml@2.7.0))
+      rehype-raw: 7.0.0
+      unist-util-visit: 5.0.0
+      unist-util-visit-parents: 6.0.1
 
   starlight-site-graph@0.2.0(@astrojs/starlight@0.31.1(astro@5.1.8(jiti@1.21.7)(rollup@4.31.0)(sass-embedded@1.83.4)(typescript@5.7.3)(yaml@2.7.0)))(astro@5.1.8(jiti@1.21.7)(rollup@4.31.0)(sass-embedded@1.83.4)(typescript@5.7.3)(yaml@2.7.0)):
     dependencies:
