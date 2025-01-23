@@ -1,0 +1,79 @@
+---
+const techStacks = [
+  { name: 'HTML', icon: '../../public/tech/html.svg', bg: 'bg-red-200' },
+  { name: 'CSS', icon: '../../public/tech/css.svg', bg: 'bg-sky-200' },
+  { name: 'JavaScript', icon: '../../public/tech/js.webp', bg: 'bg-yellow-300' },
+  { name: 'Git', icon: '../../public/tech/git.svg', bg: 'bg-red-400' },
+  { name: 'React', icon: '../../public/tech/react.svg', bg: 'bg-slate-200' },
+  { name: 'Tailwind', icon: '../../public/tech/tailwind.svg', bg: 'bg-slate-200' },
+  { name: 'ESLint', icon: '../../public/tech/eslint.svg', bg: 'bg-indigo-200' },
+  { name: 'Python', icon: '../../public/tech/python.svg', bg: 'bg-yellow-100' },
+  { name: 'Vue', icon: '../../public/tech/vue.svg', bg: 'bg-emerald-200' },
+];
+
+// 复制一份实现无缝滚动
+const allTechStacks = [...techStacks, ...techStacks];
+---
+
+<div class="w-full dark:border-slate-900 border dark:bg-slate-800 bg-slate-50 p-4 rounded-xl">
+  <p class="text-sm font-medium text-gray-600 dark:text-gray-400">技术栈</p>
+  <div class="mt-4 overflow-hidden relative">
+    <div id="tech-stack" class="flex gap-4 animate-scroll opacity-0">
+      {
+        allTechStacks.map((tech) => (
+          <div class={`flex justify-center items-center flex-shrink-0 w-20 h-20 p-4 rounded-lg ${tech.bg}`}>
+            <img 
+              src={tech.icon} 
+              alt={tech.name} 
+              class="w-full h-full object-contain" 
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  .animate-scroll {
+    animation: scroll 20s linear infinite;
+    animation-delay: 0.5s;
+    transition: opacity 0.3s ease-in-out;
+    will-change: transform;
+  }
+
+  .animate-scroll > div {
+    transform: translateZ(0);
+  }
+
+  @keyframes scroll {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 1;
+      /* n个item的宽度 + （n+1）个gap的宽度 */
+      transform: translateX(-860px);
+    }
+  }
+
+  /* 鼠标悬停时暂停动画 */
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const scrollElement: HTMLElement | null = document.querySelector('.animate-scroll');
+    if (scrollElement) {
+      // 确保元素加载完成后再显示
+      setTimeout(() => {
+        scrollElement.style.opacity = '1';
+      }, 100);
+    }
+  });
+</script>

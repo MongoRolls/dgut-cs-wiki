@@ -1,54 +1,51 @@
-# Starlight Starter Kit: Basics
+# DGUT CS WIKI
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+Ciallo ～(∠・ω< )⌒⭐  
+你好哇！欢迎来到 DGUT-CS-WIKI，这里是东莞理工学院计算机学习指南。
 
-```
-npm create astro@latest -- --template starlight
-```
+在这里，我针对东莞理工学院的计算机专业课程收集整理了一些我亲自学习过或具有极佳口碑的计算机相关课程指南，希望对你将来的学习有所帮助。
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/starlight/tree/main/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/starlight/tree/main/examples/basics)
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/withastro/starlight&create_from_path=examples/basics)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwithastro%2Fstarlight%2Ftree%2Fmain%2Fexamples%2Fbasics&project-name=my-starlight-docs&repository-name=my-starlight-docs)
+## 在线访问
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+[dgutcs.wiki](https://dgutcs.wiki)
 
-## 🚀 Project Structure
+## 技术栈
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+- 框架：[Astro](https://astro.build/) + [Starlight](https://starlight.astro.build/)
+- 样式：[Tailwind CSS](https://tailwindcss.com/)
+- 部署：GitHub Pages / Vercel
 
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   ├── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
+## 本地开发
+
+```bash
+pnpm dev
 ```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+## 成为贡献者
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+由于个人精力有限，我实在不可能把所有计算机相关的内容都学习一遍。因此，如果你有推荐的课程或资料分享，欢迎提交 PR 或发邮件给我。
 
-Static assets, like favicons, can be placed in the `public/` directory.
+贡献步骤：
 
-## 🧞 Commands
+1. Fork 本项目到你的仓库
+2. 克隆你的仓库到本地
+3. 创建新的分支进行修改
+4. 提交 PR 到主仓库的 main 分支
 
-All commands are run from the root of the project, from a terminal:
+注意事项：
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- 请确保提交的内容符合项目规范
+- 新增内容请在适当的目录下创建 markdown 文件
+- 图片等资源请放在 `src/assets` 目录下
+- 提交前请在本地测试确保无误
 
-## 👀 Want to learn more?
+## 交流群
 
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+- 实习就业
+- 前端
+
+## 特别鸣谢
+
+- 感谢所有为这个项目做出贡献的同学
+- 感谢 Astro 和 Starlight 提供了优秀的文档框架
+- 以及阅读了这本 WIKI 并慷慨地给点了 Star⭐ 的你 😘
