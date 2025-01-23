@@ -6,6 +6,8 @@ import react from '@astrojs/react';
 import starlightHeadingBadges from 'starlight-heading-badges';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
+import starlightImageZoom from 'starlight-image-zoom';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://dgutcs.wiki',
@@ -17,7 +19,7 @@ export default defineConfig({
       social: {
         github: 'https://github.com/MongoRolls/dgut-cs-wiki'
       },
-      plugins: [starlightHeadingBadges()],
+      plugins: [starlightHeadingBadges(), starlightImageZoom()],
       customCss: ['./src/tailwind.css'],
       sidebar: [
         {
