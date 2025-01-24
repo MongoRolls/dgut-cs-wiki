@@ -7,6 +7,8 @@ import starlightHeadingBadges from 'starlight-heading-badges';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import starlightImageZoom from 'starlight-image-zoom';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 // https://astro.build/config
 export default defineConfig({
@@ -80,7 +82,10 @@ export default defineConfig({
         }
       ]
     }),
-    mdx(),
+    mdx({
+      remarkPlugins: [remarkMath],
+      rehypePlugins: [rehypeKatex]
+    }),
     tailwind({
       // 禁用默认的基础样式
       applyBaseStyles: false
