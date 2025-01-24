@@ -1,6 +1,10 @@
 ---
 title: 贡献指南&文章格式
 description: 贡献指南
+sidebar:
+  badge:
+    text: 必看
+    variant: tip
 ---
 
 import { FileTree } from '@astrojs/starlight/components';
@@ -22,6 +26,8 @@ import { FileTree } from '@astrojs/starlight/components';
 
 <br />
 
+## 文章格式
+
 `md` `mdx` 文件里必须有要有下列格式，title 是必填项，对应了侧边栏文章的显示名称,description 是可选的，为了 seo 优化
 
 <br />
@@ -37,6 +43,21 @@ description: 贡献指南
 
 <br />
 
-<a href="/前言/website">框架提供的一些组件</a>
+### 文章语法
 
-待补充数学公式
+- <a href="/前言/website">框架组件</a> (导入后直接使用)
+- <a href="/前言/test">markdown语法</a>
+- 数学公式待补充
+
+## 项目启动
+
+```bash
+pnpm install
+pnpm dev
+```
+
+即可在本地访问，push分支前最好build一下,检查语法错误
+
+```bash
+pnpm build
+```

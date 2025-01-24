@@ -13,6 +13,7 @@ import rehypeKatex from 'rehype-katex';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://dgutcs.wiki',
+  base: '/src',
   integrations: [
     react(),
     starlight({
@@ -27,12 +28,12 @@ export default defineConfig({
         {
           label: '📖 前言',
           // 默认折叠
-          collapsed: true,
+          // collapsed: true,
           autogenerate: { directory: '前言' }
         },
         {
           label: '🚀 新手入门',
-          collapsed: true,
+          // collapsed: true,
           autogenerate: { directory: '新手入门' }
         },
         {
@@ -47,7 +48,7 @@ export default defineConfig({
         },
         {
           label: '📚 学科课程',
-          collapsed: true,
+          // collapsed: true,
           autogenerate: { directory: '学科课程' }
         },
         {
