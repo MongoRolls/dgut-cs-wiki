@@ -1,5 +1,22 @@
 {
-    "cSpell.words": [
-        "dgut"
-    ]
+  "cSpell.words": ["dgut"],
+  "files.associations": {
+    "*.mdx": "markdown"
+  },
+//   "markdown.copyFiles.destination": "${projectRoot}/${documentBaseName}/", // 修改为项目根目录
+  "markdown.copyFiles.destination": {
+    "**/*.{md,mdx}": "${documentWorkspaceFolder}/public/blog/${documentBaseName}/"
+  },
+  "markdown.copyFiles.filePrefix": {
+    "**/*.{md,mdx}": "${documentBaseName}-${currentDate|YYYYMMDD}-"
+  },
+  "markdown.copyFiles.overwriteBehavior": "nameIncrementally",
+  "[markdown]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
+  },
+  "[mdx]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
+  }
 }
