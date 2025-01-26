@@ -13,6 +13,7 @@ import rehypeKatex from 'rehype-katex';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://dgutcs.wiki',
+  // base: '/',
   integrations: [
     react(),
     starlight({
@@ -27,12 +28,12 @@ export default defineConfig({
         {
           label: '📖 前言',
           // 默认折叠
-          collapsed: true,
+          // collapsed: true,
           autogenerate: { directory: '前言' }
         },
         {
           label: '🚀 新手入门',
-          collapsed: true,
+          // collapsed: true,
           autogenerate: { directory: '新手入门' }
         },
         {
@@ -47,7 +48,7 @@ export default defineConfig({
         },
         {
           label: '📚 学科课程',
-          collapsed: true,
+          // collapsed: true,
           autogenerate: { directory: '学科课程' }
         },
         {
@@ -57,7 +58,7 @@ export default defineConfig({
         },
         {
           label: '💻 前端开发',
-          collapsed: true,
+          // collapsed: true,
           autogenerate: { directory: '前端开发' }
         },
         {
@@ -83,8 +84,8 @@ export default defineConfig({
       ]
     }),
     mdx({
-      remarkPlugins: [remarkMath],
-      rehypePlugins: [rehypeKatex]
+        // remarkPlugins: [remarkMath],
+        // rehypePlugins: [rehypeKatex]
     }),
     tailwind({
       // 禁用默认的基础样式
