@@ -13,7 +13,7 @@ import rehypeKatex from 'rehype-katex';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://dgutcs.wiki',
-  base: '/src',
+  // base: '/',
   integrations: [
     react(),
     starlight({
@@ -58,7 +58,7 @@ export default defineConfig({
         },
         {
           label: '💻 前端开发',
-          collapsed: true,
+          // collapsed: true,
           autogenerate: { directory: '前端开发' }
         },
         {
@@ -84,8 +84,8 @@ export default defineConfig({
       ]
     }),
     mdx({
-      remarkPlugins: [remarkMath],
-      rehypePlugins: [rehypeKatex]
+        // remarkPlugins: [remarkMath],
+        // rehypePlugins: [rehypeKatex]
     }),
     tailwind({
       // 禁用默认的基础样式
