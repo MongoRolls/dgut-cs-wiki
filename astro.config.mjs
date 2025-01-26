@@ -24,6 +24,9 @@ export default defineConfig({
       },
       plugins: [starlightHeadingBadges(), starlightImageZoom()],
       customCss: ['./src/tailwind.css'],
+      components: {
+        Head: './src/layouts/GoogleAnalytics.astro',
+      },
       sidebar: [
         {
           label: '📖 前言',
