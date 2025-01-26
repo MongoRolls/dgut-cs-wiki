@@ -24,9 +24,6 @@ export default defineConfig({
       },
       plugins: [starlightHeadingBadges(), starlightImageZoom()],
       customCss: ['./src/tailwind.css'],
-      components: {
-        Head: './src/layouts/GoogleAnalytics.astro',
-      },
       sidebar: [
         {
           label: '📖 前言',
@@ -83,6 +80,25 @@ export default defineConfig({
           label: '🌍 考公留学',
           collapsed: true,
           autogenerate: { directory: '考公留学' }
+        }
+      ],
+      head: [
+        {
+          tag: 'script',
+          attrs: {
+            src: 'https://www.googletagmanager.com/gtag/js?id=G-Q5MWES30P5'
+          }
+        },
+        {
+          tag: 'script',
+          attrs: {
+            type: 'text/javascript',
+            innerHTML: `(function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "q02d2ytzcm");`
+          }
         }
       ]
     }),
