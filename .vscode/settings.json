@@ -1,11 +1,15 @@
 {
-  "cSpell.words": ["dgut"],
+  "cSpell.words": [
+    "bilibili",
+    "bvid",
+    "dgut"
+  ],
   "files.associations": {
     "*.mdx": "markdown"
   },
 //   "markdown.copyFiles.destination": "${projectRoot}/${documentBaseName}/", // 修改为项目根目录
   "markdown.copyFiles.destination": {
-    "**/*.{md,mdx}": "${documentWorkspaceFolder}/public/blog/${documentBaseName}/"
+    "**/*.{md,mdx}": "${documentWorkspaceFolder}/src/assets/blog/${documentBaseName}/"
   },
   "markdown.copyFiles.filePrefix": {
     "**/*.{md,mdx}": "${documentBaseName}-${currentDate|YYYYMMDD}-"
