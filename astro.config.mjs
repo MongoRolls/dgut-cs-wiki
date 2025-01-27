@@ -100,6 +100,13 @@ export default defineConfig({
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
           })(window, document, "clarity", "script", "q02d2ytzcm");
           `
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            name: 'baidu-site-verification',
+            content: 'codeva-opa7zySsfj'
+          }
         }
       ]
     }),
