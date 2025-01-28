@@ -86,8 +86,18 @@ export default defineConfig({
         {
           tag: 'script',
           attrs: {
+            async: true,
             src: 'https://www.googletagmanager.com/gtag/js?id=G-Q5MWES30P5'
           }
+        },
+        {
+          tag: 'script',
+          content: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Q5MWES30P5');
+          `
         },
         {
           tag: 'script',
