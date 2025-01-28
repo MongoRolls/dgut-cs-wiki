@@ -16,7 +16,7 @@ author: hongshen
 
 <div align="center">
 
-![计算机网络自顶向下](../../../../assets/operating_system_concepts.png)。
+![操作系统概念](../../../../assets/operating_system_concepts.png)。
 
 </div>
 
