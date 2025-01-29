@@ -28,7 +28,7 @@ export default defineConfig({
       },
       customCss: ['./src/tailwind.css'],
       editLink: {
-        baseUrl: "https://github.com/Athena-OS/athena-docs/tree/main/",
+        baseUrl: "https://github.com/MongoRolls/dgut-cs-wiki/tree/main/",
       },
       lastUpdated: true,
       sidebar: [
