@@ -13,7 +13,9 @@ description: 计算机网络学习路线
 
   推荐《计算机网络：自顶向下方法》强烈建议读一读，会对计算机网络有更深的认识，而不是局限于八股。
 
-![计算机网络自顶向下](../../../../assets/network_top_down_approach.jpg)
+<div align="center">
+
+![计算机网络自顶向下](../../../assets/network_top_down_approach.jpg)
 
 </div>
 

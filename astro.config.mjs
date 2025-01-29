@@ -37,19 +37,9 @@ export default defineConfig({
           autogenerate: { directory: '新手入门' }
         },
         {
-          label: '🏆 竞赛经验',
-          collapsed: true,
-          autogenerate: { directory: '竞赛经验' }
-        },
-        {
-          label: '🛠️ 开发工具',
-          collapsed: true,
-          autogenerate: { directory: '开发工具' }
-        },
-        {
-          label: '📚 学科课程',
+          label: '📚 计算机基础',
           // collapsed: true,
-          autogenerate: { directory: '学科课程' }
+          autogenerate: { directory: '计算机基础' }
         },
         {
           label: '🌐 后端开发',
@@ -60,11 +50,21 @@ export default defineConfig({
           label: '💻 前端开发',
           // collapsed: true,
           autogenerate: { directory: '前端开发' }
+        }, 
+        {
+          label: '💼 实习就业',
+          collapsed: true,
+          autogenerate: { directory: '实习就业' }
         },
         {
-          label: '🤖 人工智能',
+          label: '🔍 转载文章',
           collapsed: true,
-          autogenerate: { directory: '人工智能' }
+          autogenerate: { directory: '转载文章' }
+        },
+        {
+          label: '🏆 竞赛经验',
+          collapsed: true,
+          autogenerate: { directory: '竞赛经验' }
         },
         {
           label: '🎓 考研经验',
@@ -72,14 +72,14 @@ export default defineConfig({
           autogenerate: { directory: '考研经验' }
         },
         {
-          label: '💼 工作经验',
-          collapsed: true,
-          autogenerate: { directory: '工作经验' }
-        },
-        {
           label: '🌍 考公留学',
           collapsed: true,
           autogenerate: { directory: '考公留学' }
+        },
+        {
+          label: '其他',
+          collapsed: true,
+          autogenerate: { directory: '其他' }
         }
       ],
       head: [
