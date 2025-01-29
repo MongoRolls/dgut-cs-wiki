@@ -1,0 +1,290 @@
+---
+import { Icon } from '@astrojs/starlight/components';
+import '../tailwind.css';
+
+// 贡献者数据
+let contributors = [
+  {
+    name: "红神",
+    role: "核心贡献者",
+    avatar: "https://api.dicebear.com/7.x/miniavs/svg?seed=3",
+    description: "莞青CTO",
+    tags: ['快手', '小黑盒', '后端'],
+    github: 'https://github.com/interca/',
+    details: "专注于后端开发，对分布式系统有深入研究"
+  },
+  {
+    name: "半糖",
+    role: "核心贡献者",
+    avatar: "https://api.dicebear.com/7.x/miniavs/svg?seed=4",
+    description: "开源大佬",
+    tags: ['小米', '百度', '后端'],
+    github: 'https://github.com/BanTanger',
+    details: "热衷于开源项目贡献，擅长系统架构设计"
+  },
+  {
+    name: "芒果",
+    role: "项目发起人",
+    avatar: "https://api.dicebear.com/7.x/miniavs/svg?seed=2",
+    github: "https://github.com/MongoRolls",
+    description: "前端",
+    tags: ['前端', '开源爱好者'],
+    details: "负责项目的发起和维护，热爱技术分享和开源社区"
+  },
+  {
+    name: "金鱼",
+    role: "核心贡献者",
+    avatar: "https://api.dicebear.com/7.x/miniavs/svg?seed=5",
+    description: "ab实验室，ak实验室",
+    tags: ['字节预备', '小鹅通', '后端'],
+    github: 'https://github.com/dbinggo',
+    details: "专注于性能优化和系统架构，热爱技术创新"
+  }
+];
+
+---
+
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>贡献者名单 | DGUT CS WIKI</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="back-button">
+        <a href="/" class="back-link">
+          <Icon name="left-arrow" size="1.2rem" />
+          返回首页
+        </a>
+      </div>
+      
+      <h1 class="title">贡献者名单</h1>
+      <p class="subtitle">感谢所有为 DGUT CS WIKI 做出贡献的朋友们</p>
+
+      <div class="cards">
+        {contributors.map((contributor) => (
+          <div class="card">
+            <div class="card-content">
+              <div class="card-header">
+                <img src={contributor.avatar} alt={contributor.name} class="avatar bg-slate-500"/>
+                <div class="card-titles">
+                  <h2>{contributor.name}</h2>
+                  <span class="role">{contributor.role}</span>
+                </div>
+              </div>
+              
+              <div class="tags-container">
+                <div class="tags">
+                  {contributor.tags.map(tag => (
+                    <span class="tag">{tag}</span>
+                  ))}
+                </div>
+                <a href={contributor.github} target="_blank" class="github-link" title="访问 GitHub 主页">
+                  <Icon name="github" size="1.2rem" />
+                </a>
+              </div>
+
+              <p class="description">{contributor.description}</p>
+              
+              <div class="card-details">
+                <p>{contributor.details}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .title {
+    text-align: center;
+    color: #2d3748;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    text-align: center;
+    color: #4a5568;
+    margin-bottom: 3rem;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    height: 220px; /* 稍微调整初始高度 */
+  }
+
+  .card:hover {
+    height: 340px; /* 调整展开高度 */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-content {
+    position: relative;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    object-fit: cover;
+  }
+
+  .card-titles h2 {
+    margin: 0;
+    color: #2d3748;
+    font-size: 1.25rem;
+  }
+
+  .role {
+    color: #718096;
+    font-size: 0.875rem;
+  }
+
+  .description {
+    color: #4a5568;
+    margin: 1rem 0;
+    line-height: 1.5;
+  }
+
+  .tags-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    flex: 1;
+  }
+
+  .tag {
+    background: rgba(99, 102, 241, 0.1);
+    color: #4f46e5;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+
+  .tag:hover {
+    background: rgba(99, 102, 241, 0.2);
+  }
+
+  .card-details {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    margin: 1rem 0;
+    color: #4a5568;
+    line-height: 1.6;
+  }
+
+  .card:hover .card-details {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .github-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    color: #4a5568;
+    border-radius: 9999px;
+    transition: all 0.2s ease;
+    margin-left: 0.5rem;
+    background: rgba(99, 102, 241, 0.1);
+  }
+
+  .github-link:hover {
+    color: #4f46e5;
+    background: rgba(99, 102, 241, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .back-button {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 100;
+  }
+
+  .back-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 9999px;
+    color: #2d3748;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .back-link:hover {
+    background: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
+
+    .title {
+      font-size: 2rem;
+    }
+
+    .cards {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
