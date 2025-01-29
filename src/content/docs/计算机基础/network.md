@@ -15,7 +15,7 @@ description: 计算机网络学习路线
 
 <div align="center">
 
-![计算机网络自顶向下](../../../../assets/network_top_down_approach.jpg)
+![计算机网络自顶向下](../../../assets/network_top_down_approach.jpg)
 
 </div>
 

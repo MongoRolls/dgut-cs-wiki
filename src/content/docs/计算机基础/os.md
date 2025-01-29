@@ -16,13 +16,10 @@ author: hongshen
 
 <div align="center">
 
-![操作系统概念](../../../../assets/operating_system_concepts.png)。
+![操作系统概念](../../../assets/operating_system_concepts.png)。
 
 </div>
 
 - 面试和八股
 
   这里推荐小林 coding 的[操作系统面试题](https://xiaolincoding.com/os/)。
-
-
-
