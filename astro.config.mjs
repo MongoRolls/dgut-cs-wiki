@@ -23,7 +23,14 @@ export default defineConfig({
         github: 'https://github.com/MongoRolls/dgut-cs-wiki'
       },
       plugins: [starlightHeadingBadges(), starlightImageZoom()],
+      components: {
+        Header: './src/components/Header.astro'
+      },
       customCss: ['./src/tailwind.css'],
+      editLink: {
+        baseUrl: "https://github.com/Athena-OS/athena-docs/tree/main/",
+      },
+      lastUpdated: true,
       sidebar: [
         {
           label: '📖 前言',
