@@ -53,7 +53,7 @@ export default defineConfig({
         }, 
         {
           label: '💼 实习就业',
-          collapsed: true,
+          // collapsed: true,
           autogenerate: { directory: '实习就业' }
         },
         {
