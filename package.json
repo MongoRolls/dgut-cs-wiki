@@ -9,11 +9,11 @@
     "preview": "astro preview",
     "astro": "astro",
     "eslint": "eslint --fix --max-warnings=0 'src/**/*.{js,jsx,ts,tsx,mdx}'",
-    "pre-check": "tsc && npx lint-staged",
-      "postinstall": "husky install"
+    "pre-check": "sh ./scripts/pre-check.sh",
+    "postinstall": "husky install"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": [
+    "src/**/*.{js,jsx,ts,tsx,mdx}": [
       "npm run eslint"
     ]
   },
@@ -46,6 +46,7 @@
     "eslint": "^9.19.0",
     "eslint-plugin-astro": "^1.3.1",
     "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-mdx": "^3.1.5",
     "eslint-plugin-react": "^7.37.4",
     "husky": "^9.1.7",
     "lint-staged": "^15.4.3",
