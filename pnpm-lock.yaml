@@ -108,6 +108,9 @@ importers:
       sass-embedded:
         specifier: ^1.83.4
         version: 1.83.4
+      typescript:
+        specifier: ^5.7.3
+        version: 5.7.3
 
 packages:
 

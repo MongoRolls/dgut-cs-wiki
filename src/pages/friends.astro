@@ -2,8 +2,18 @@
 import { Icon } from '@astrojs/starlight/components';
 import '../tailwind.css';
 
+type Contributor = {
+  name: string;
+  role: string;
+  avatar: string;
+  description: string;
+  tags: string[];
+  github: string;
+  gradient?: { from: string; to: string };
+}
+
 // 贡献者数据
-let contributors = [
+let contributors: Contributor[] = [
   {
     name: "红神",
     role: "核心贡献者",
@@ -11,7 +21,6 @@ let contributors = [
     description: "莞青CTO",
     tags: ['快手', '小黑盒', '后端'],
     github: 'https://github.com/interca/',
-    details: "专注于后端开发，对分布式系统有深入研究"
   },
   {
     name: "半糖",
@@ -20,7 +29,6 @@ let contributors = [
     description: "开源大佬",
     tags: ['小米', '百度', '后端'],
     github: 'https://github.com/BanTanger',
-    details: "热衷于开源项目贡献，擅长系统架构设计"
   },
   {
     name: "芒果",
@@ -29,7 +37,6 @@ let contributors = [
     github: "https://github.com/MongoRolls",
     description: "前端",
     tags: ['前端', '开源爱好者'],
-    details: "负责项目的发起和维护，热爱技术分享和开源社区"
   },
   {
     name: "金鱼",
@@ -38,9 +45,22 @@ let contributors = [
     description: "ab实验室，ak实验室",
     tags: ['字节预备', '小鹅通', '后端'],
     github: 'https://github.com/dbinggo',
-    details: "专注于性能优化和系统架构，热爱技术创新"
   }
 ];
+
+// 预定义一些渐变色组合
+const gradients = [
+  { from: '#6366f1', to: '#818cf8' }, // 靛蓝色
+  { from: '#f43f5e', to: '#fb7185' }, // 玫红色
+  { from: '#0ea5e9', to: '#38bdf8' }, // 天蓝色
+  { from: '#f59e0b', to: '#fbbf24' }, // 琥珀色
+];
+
+// 为每个贡献者分配一个渐变色
+contributors = contributors.map((contributor, index) => ({
+  ...contributor,
+  gradient: gradients[index % gradients.length]
+}));
 
 ---
 
@@ -66,6 +86,7 @@ let contributors = [
       <div class="cards">
         {contributors.map((contributor) => (
           <div class="card">
+            <div class="card-background" style={`background: linear-gradient(135deg, ${contributor.gradient?.from} 0%, ${contributor.gradient?.to} 100%);`}></div>
             <div class="card-content">
               <div class="card-header">
                 <img src={contributor.avatar} alt={contributor.name} class="avatar bg-slate-500"/>
@@ -78,19 +99,15 @@ let contributors = [
               <div class="tags-container">
                 <div class="tags">
                   {contributor.tags.map(tag => (
-                    <span class="tag">{tag}</span>
+                    <span class="tag" style={`color: #2f3747`} >{tag}</span>
                   ))}
                 </div>
-                <a href={contributor.github} target="_blank" class="github-link" title="访问 GitHub 主页">
+                <a href={contributor.github} target="_blank" class="github-link" style={`color: #2f3747`} title="访问 GitHub 主页">
                   <Icon name="github" size="1.2rem" />
                 </a>
               </div>
 
               <p class="description">{contributor.description}</p>
-              
-              <div class="card-details">
-                <p>{contributor.details}</p>
-              </div>
             </div>
           </div>
         ))}
@@ -136,23 +153,39 @@ let contributors = [
 
   .card {
     position: relative;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 1rem;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     overflow: hidden;
-    height: 220px; /* 稍微调整初始高度 */
   }
 
   .card:hover {
-    height: 340px; /* 调整展开高度 */
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    opacity: 0.15;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 70%);
+    transition: all 0.3s ease;
+    z-index: 0;
+  }
+
+  .card:hover .card-background {
+    opacity: 0.12;
+    clip-path: polygon(0 0, 100% 0, 100% 40%, 0 75%);
   }
 
   .card-content {
     position: relative;
+    z-index: 1;
+    padding: 1.5rem;
   }
 
   .card-header {
@@ -167,12 +200,16 @@ let contributors = [
     border-radius: 50%;
     margin-right: 1rem;
     object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
   }
 
   .card-titles h2 {
     margin: 0;
     color: #2d3748;
-    font-size: 1.25rem;
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
   }
 
   .role {
@@ -184,6 +221,8 @@ let contributors = [
     color: #4a5568;
     margin: 1rem 0;
     line-height: 1.5;
+    font-size: 0.95rem;
+    opacity: 0.9;
   }
 
   .tags-container {
@@ -201,31 +240,19 @@ let contributors = [
   }
 
   .tag {
-    background: rgba(99, 102, 241, 0.1);
-    color: #4f46e5;
+    background: rgba(200, 200, 200, 0.2);
+    color: #333;
     padding: 0.25rem 0.75rem;
     border-radius: 9999px;
     font-size: 0.75rem;
     font-weight: 500;
     transition: all 0.2s;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   .tag:hover {
-    background: rgba(99, 102, 241, 0.2);
-  }
-
-  .card-details {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.3s ease;
-    margin: 1rem 0;
-    color: #4a5568;
-    line-height: 1.6;
-  }
-
-  .card:hover .card-details {
-    opacity: 1;
-    transform: translateY(0);
+    background: rgba(150, 150, 150, 0.3);
   }
 
   .github-link {
@@ -234,17 +261,17 @@ let contributors = [
     justify-content: center;
     width: 2rem;
     height: 2rem;
-    color: #4a5568;
     border-radius: 9999px;
     transition: all 0.2s ease;
     margin-left: 0.5rem;
-    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(200, 200, 200, 0.2);
+    color: #333;
   }
 
   .github-link:hover {
-    color: #4f46e5;
-    background: rgba(99, 102, 241, 0.2);
     transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   }
 
   .back-button {
