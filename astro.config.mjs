@@ -24,8 +24,8 @@ export default defineConfig({
       },
       plugins: [starlightHeadingBadges(), starlightImageZoom()],
       components: {
-        Header: "./src/components/Header.astro",
-        MarkdownContent: "./src/components/MarkdownContent.astro",
+        Header: "./src/components/starlight/Header.astro",
+        MarkdownContent: "./src/components/starlight/MarkdownContent.astro",
       },
       customCss: ["./src/tailwind.css"],
       editLink: {
