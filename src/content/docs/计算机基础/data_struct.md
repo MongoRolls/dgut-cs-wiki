@@ -1,7 +1,7 @@
 ---
 title: 🧩 数据结构
 description: 数据结构学习路线
-author: hongshen
+author: 芒果
 ---
 
 ### 重要性
