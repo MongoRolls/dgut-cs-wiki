@@ -8,6 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "tsc": "tsc --noEmit",
     "eslint": "eslint --fix --max-warnings=0 'src/**/*.{js,jsx,ts,tsx,mdx}'",
     "postinstall": "husky install"
   },
@@ -51,6 +52,7 @@
     "lint-staged": "^15.4.3",
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1",
-    "sass-embedded": "^1.83.4"
+    "sass-embedded": "^1.83.4",
+    "typescript": "^5.7.3"
   }
 }
