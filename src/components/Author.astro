@@ -1,0 +1,77 @@
+---
+interface Props {
+  author?: string;
+}
+
+const { author } = Astro.props;
+
+// 如果没有作者信息，不渲染任何内容
+if (!author) return null;
+---
+
+<div class="flex items-center space-x-2 mt-4 mb-6 px-4 py-2 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="w-5 h-5 text-slate-500 dark:text-slate-400"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+    <circle cx="12" cy="7" r="4"></circle>
+  </svg>
+  <div class="flex flex-col">
+    <span class="text-sm text-slate-500 dark:text-slate-400">作者</span>
+    <span class="text-base font-medium text-slate-700 dark:text-slate-300">{author}</span>
+  </div>
+</div>
+
+<style>
+  .flex {
+    display: flex;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .space-x-2 > * + * {
+    margin-left: 0.5rem;
+  }
+  .mt-4 {
+    margin-top: 1rem;
+  }
+  .mb-6 {
+    margin-bottom: 1.5rem;
+  }
+  .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .rounded-lg {
+    border-radius: 0.5rem;
+  }
+  .text-sm {
+    font-size: 0.875rem;
+  }
+  .text-base {
+    font-size: 1rem;
+  }
+  .font-medium {
+    font-weight: 500;
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+
+  /* 添加悬停效果 */
+  div:hover {
+    transform: translateY(-1px);
+    transition: transform 0.2s ease;
+  }
+</style>

@@ -32,8 +32,9 @@ export default [
     rules: {
       ...mdx.flatCodeBlocks.rules,
       // if you want to override some rules for code blocks
-      "no-var": "error",
-      "prefer-const": "error",
+      "no-var": "off",
+      "no-console": "off",
+      "prefer-const": "off",
     },
   },
   {

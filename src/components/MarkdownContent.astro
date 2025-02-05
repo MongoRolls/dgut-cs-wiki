@@ -1,0 +1,24 @@
+---
+import '@astrojs/starlight/style/markdown.css';
+import Author from './Author.astro';
+
+const {entry} = Astro.props;
+const { data } = entry;
+console.log('xzc',data);
+
+
+const author = "test";
+---
+
+<article>
+  <Author author={data?.author} />
+  <div class="sl-markdown-content">
+    <slot />
+  </div>
+</article>
+
+<style>
+  .sl-markdown-content {
+    padding: 1rem;
+  }
+</style>
