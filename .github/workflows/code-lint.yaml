@@ -1,0 +1,62 @@
+name: Code Quality Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/**/*.{js,jsx,ts,tsx,mdx}"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - ".github/workflows/**"
+
+jobs:
+  lint:
+    name: Code Lint & Type Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          run_install: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: ESLint check
+        run: pnpm run eslint
+
+      - name: Add Check Summary
+        if: always()
+        run: |
+          echo "### 代码质量检查结果 :microscope:" >> $GITHUB_STEP_SUMMARY
+          if [ ${{ job.status }} == 'success' ]; then
+            echo "✅ 所有检查通过" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ 检查未通过" >> $GITHUB_STEP_SUMMARY
+            echo "请查看上方日志了解具体错误信息" >> $GITHUB_STEP_SUMMARY
+          fi

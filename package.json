@@ -9,7 +9,6 @@
     "preview": "astro preview",
     "astro": "astro",
     "eslint": "eslint --fix --max-warnings=0 'src/**/*.{js,jsx,ts,tsx,mdx}'",
-    "pre-check": "sh ./scripts/pre-check.sh",
     "postinstall": "husky install"
   },
   "lint-staged": {
