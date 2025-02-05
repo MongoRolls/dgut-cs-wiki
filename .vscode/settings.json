@@ -13,20 +13,53 @@
   "files.associations": {
     "*.mdx": "markdown"
   },
-//   "markdown.copyFiles.destination": "${projectRoot}/${documentBaseName}/", // 修改为项目根目录
+  // "markdown.copyFiles.destination": "${projectRoot}/${documentBaseName}/", // 修改为项目根目录
   "markdown.copyFiles.destination": {
     "**/*.{md,mdx}": "${documentWorkspaceFolder}/src/assets/blog/${documentBaseName}/"
-  },
-  "markdown.copyFiles.filePrefix": {
-    "**/*.{md,mdx}": "${documentBaseName}-${currentDate|YYYYMMDD}-"
   },
   "markdown.copyFiles.overwriteBehavior": "nameIncrementally",
   "[markdown]": {
     "editor.formatOnSave": true,
-    "editor.formatOnPaste": true
+    "editor.formatOnPaste": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[mdx]": {
     "editor.formatOnSave": true,
-    "editor.formatOnPaste": true
-  }
+    "editor.formatOnPaste": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "search.exclude": {
+    "/node_modules": true,
+    "dist": true,
+    "pnpm-lock.sh": true
+  },
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[less]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "liveServer.settings.port": 5502
 }

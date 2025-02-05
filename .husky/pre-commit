@@ -1,0 +1,2 @@
+echo "提交前进行tsc和eslint检查..."
+npm run pre-check
