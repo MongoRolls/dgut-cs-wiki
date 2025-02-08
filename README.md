@@ -12,15 +12,17 @@ Ciallo ～(∠・ω< )⌒⭐
 
 总结学习经验，相关课程指南，希望对你将来的学习有所帮助。
 
+![dgutcs.wiki](https://camo.githubusercontent.com/c12baeff1379d6454eaaade4f1a8b482372eef6ef8b652d1c3573cabf8264638/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f73756e3032323553554e2f73756e3032323553554e2f6173736574732f696d616765732f69636f6e2e706e67)
+
 ## 在线访问
 
 [dgutcs.wiki](https://dgutcs.wiki)
 
-## 技术栈
+## wiki技术栈
 
 - 框架：[Astro](https://astro.build/) + [Starlight](https://starlight.astro.build/)
 - 样式：[Tailwind CSS](https://tailwindcss.com/)
-- 部署：GitHub Pages / Vercel
+- 部署：Vercel + cloudflare
 
 ## 本地开发
 
@@ -30,8 +32,6 @@ pnpm dev
 ```
 
 ## 成为贡献者
-
-由于个人精力有限，我实在不可能把所有计算机相关的内容都学习一遍。因此，如果有推荐的课程或资料分享，欢迎提交 PR 或发送邮件。
 
 贡献步骤：
 

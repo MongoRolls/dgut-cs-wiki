@@ -1,0 +1,153 @@
+---
+import 'tailwindcss/tailwind.css';
+import 'aos/dist/aos.css';
+---
+
+<html lang="en">
+  <head>
+    <title>test</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <body>
+    <div id="container" class="flex flex-col items-center h-screen">
+      <h1>test</h1>
+      <h2>typing</h2>
+      <div class="typing">
+        Hello, world!
+      </div>
+
+      <h2>3D card</h2>
+      <div class="card-container" data-aos="zoom-in">
+        <div class="card"></div>
+      </div>
+      
+      <h2>css slide</h2>
+
+    </div>
+
+    <script>
+      // 2. 在客户端动态导入并初始化
+      const loadAOS = async () => {
+        //@ts-ignore
+        const AOS = await import('aos');
+        AOS.default.init({
+          duration: 1200,
+          once: true
+        });
+      };
+
+      loadAOS();
+    </script>
+  </body>
+</html>
+
+<style lang="scss">
+  /* 3D card */
+
+  .card-container {
+    transform-style: preserve-3d;
+    perspective: 500px;
+  }
+
+  .card {
+    height: 300px;
+    position: relative;
+    aspect-ratio: 143 / 200;
+    background-image: url('https://assets.codepen.io/13471/pikachu-gx.webp');
+
+    background-size: cover;
+    background-position: center;
+
+    // 复原
+    transition: all .4s;
+
+    // 闪烁
+    &::after {
+        content: "";
+        display: none;
+        position: absolute;
+        inset: 0;
+        // 星光
+        background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif");
+        mix-blend-mode: color-dodge;
+        opacity: 0.7;
+    }
+
+    // 混合模式 
+    &::before {
+        content: "";
+        display: none;
+        position: absolute;
+        inset: 0;
+        background: 
+            linear-gradient(
+                115deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.7) var(--per), 
+                rgba(0, 0, 0, .6) calc(var(--per) + 25%), 
+                rgba(255, 255, 255, .5) calc(var(--per) + 50%), 
+                transparent 100%
+            );
+        mix-blend-mode: color-dodge;
+    }
+  
+    &:hover::before {
+        display: block;
+    }
+
+    &:hover::after {
+        display: block;
+    }
+  }
+
+  /* 打字效果 */
+    .typing {
+    font-family: monospace;
+    font-size:32px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(13, end), blink 0.75s step-end infinite;
+    border-right: 3px solid black;
+    vertical-align: middle;
+    }
+
+    @keyframes typing {
+    from { width: 0; }
+    to { width: 13ch; }
+    }
+
+    @keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+    }
+</style>
+
+<script>
+  const multiple = 10;
+  const mouseOverContainer = document.querySelector(".card-container")!;
+  const element = document.querySelector(".card")! as HTMLElement;
+
+  function transformElement(x: any, y: any) {
+      let box = element.getBoundingClientRect() as DOMRect;
+      const calcX = -(y - box.y - box.height / 2) / multiple;
+      const calcY = (x - box.x - box.width / 2) / multiple;
+      const percentage = (x - box.x) / box.width * 1000 / 10;
+      
+      element.style.setProperty("--per", `${percentage}%`);
+      element.style.transform = `rotateX(${calcX}deg) rotateY(${calcY}deg)`;
+  }
+
+  mouseOverContainer.addEventListener("mousemove", (e: any) => {
+      window.requestAnimationFrame(function () {
+          transformElement(e.clientX, e.clientY);
+      });
+  });
+
+  mouseOverContainer.addEventListener("mouseleave", (e) => {
+      window.requestAnimationFrame(function () {
+          element.style.transform = "rotateX(0) rotateY(0)";
+      });
+  });
+</script>

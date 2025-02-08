@@ -1,5 +1,5 @@
 ---
-title: DGUT CS WIKI
+title: DGUTCS WIKI
 description: 莞工计算机学习指南
 head:
   - tag: title
@@ -19,9 +19,9 @@ head:
 
 template: splash
 hero:
-  tagline: 学而思不足！
+  tagline: 学而思不足
   image:
-    file: ../../assets/logo.png
+    file: ../../assets/hero.svg
   actions:
     - text: Getting Started
       link: /前言
@@ -34,30 +34,29 @@ hero:
 
 import { Card, CardGrid } from "@astrojs/starlight/components";
 
+<div data-aos="fade-up">
 <CardGrid stagger>
-  <Card title="大学规划，成功案例" icon="pencil">
+  <Card  title="大学规划，成功案例" icon="pencil">
     竞赛？考研？找工作？考公？留学？你想了解的，这里都有成功案例，助力你冲击名校和大厂。
   </Card>
 
-{' '}
+{" "}
+
 <Card title="工程开发，学习路线" icon="setting">
   前端开发、后端开发和人工智能学习路线和课程推荐，点亮全部技能树，补齐教学短板。
 </Card>
 
-{' '}
+{" "}
+
 <Card title="学习疑阵，随时答疑" icon="information">
   如果你在学习过程中遇到了任何问题，加入我们的学习矩阵，群内大佬随时在线答疑。
 </Card>
 
-   <Card title="学科课程，免费精选" icon="open-book">
+  <Card title="学科课程，免费精选" icon="open-book">
     莞工计算机系相关学科课程的资源推荐和学习建议，拒绝选择困难，全套资源均免费获取，放心食用。
   </Card>
 </CardGrid>
+</div>
+<h2 class="sr-only">学习路线，工程开发</h2>
 
-<h2 class="sr-only">
-  学习路线，工程开发
-</h2>
-
-<h2 class="sr-only">
-  欢迎加入我们的学习矩阵，群内大佬随时在线答疑。
-</h2>
+<h2 class="sr-only">欢迎加入我们的学习矩阵，群内大佬随时在线答疑。</h2>

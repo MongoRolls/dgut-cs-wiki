@@ -9,7 +9,8 @@
     "dgutcs",
     "hongshen",
     "jinyu",
-    "Uniapp"
+    "Uniapp",
+    "vmin"
   ],
   "files.associations": {
     "*.mdx": "markdown"
