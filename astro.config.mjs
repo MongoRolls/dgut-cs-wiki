@@ -26,6 +26,7 @@ export default defineConfig({
       components: {
         Header: "./src/components/starlight/Header.astro",
         MarkdownContent: "./src/components/starlight/MarkdownContent.astro",
+        Hero: "./src/components/starlight/Hero.astro",
       },
       customCss: ["./src/tailwind.css"],
       editLink: {
