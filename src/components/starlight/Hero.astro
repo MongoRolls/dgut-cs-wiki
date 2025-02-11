@@ -67,7 +67,7 @@ if (image) {
 	</div>
 </div>
 
-<style>
+<style lang="scss">
 	.hero {
 		display: grid;
 		align-items: center;
@@ -119,27 +119,30 @@ if (image) {
 	
 	.hero-title {
 		font-family: monospace;
-		color: 
+		background: linear-gradient(to right, #1e90ff, #add8e6);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 	}
 
 	.typing {
-	font-family: monospace;
+	font-family: Sarasa Mono SC; // 使用 Noto Sans Mono 字体作为等宽字体
+	font-size: 24px;
 	display: inline-block;
 	white-space: nowrap;
 	overflow: hidden;
-	animation: typing 2s steps(5, end), blink 0.75s step-end infinite;
+	animation: typing 2s steps(5, end), blink 1s step-end infinite;
 	border-right: 3px solid black;
 	vertical-align: middle;
 	}
 
 	@keyframes typing {
 	from { width: 0; }
-	to { width: 8ch; }
+	to { width: 122px; }
 	}
 
 	@keyframes blink {
-	from, to { border-color: transparent; }
-	50% { border-color: black; }
+	from, to { border-color: #17181c; }
+	50% { border-color: white; }
 	}
 
 

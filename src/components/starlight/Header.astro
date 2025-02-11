@@ -26,7 +26,11 @@ const shouldRenderSearch =
 
 <div class="header sl-flex">
   <div class="title-wrapper sl-flex">
-    <SiteTitle {...Astro.props} />
+    <!-- <SiteTitle {...Astro.props} />
+      -->
+    <a href="/" class="no-underline">
+      <span class="text-2xl font-bold text-gray-700 font-mono">{Astro.props.siteTitle}</span>
+    </a>
   </div>
   <div class="sl-flex gap-2 items-center">
     {shouldRenderSearch && <Search {...Astro.props} />}

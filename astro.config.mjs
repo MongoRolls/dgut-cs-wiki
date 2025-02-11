@@ -129,14 +129,20 @@ export default defineConfig({
         },
       ],
     }),
-    mdx({
-      // remarkPlugins: [remarkMath],
-      // rehypePlugins: [rehypeKatex]
-    }),
+    mdx(),
     tailwind({
       // 禁用默认的基础样式
       applyBaseStyles: false,
     }),
     sitemap(),
   ],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: ``,
+        },
+      },
+    },
+  },
 });

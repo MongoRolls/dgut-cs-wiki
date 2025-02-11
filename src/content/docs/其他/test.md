@@ -35,6 +35,7 @@ var fun = function lang(l) {
 // my-test-file.js
 
 // my-test-file.js
+// eslint-disable-next-line no-console
 console.log("Hello World!");
 ```
 
