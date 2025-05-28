@@ -77,7 +77,7 @@ export default defineConfig({
         },
         {
           label: "🎓 考研经验",
-          collapsed: true,
+          // collapsed: true,
           autogenerate: { directory: "考研经验" },
         },
         {
