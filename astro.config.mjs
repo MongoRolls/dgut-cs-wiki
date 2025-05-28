@@ -41,6 +41,11 @@ export default defineConfig({
           autogenerate: { directory: "前言" },
         },
         {
+          label: "💼 实习就业",
+          // collapsed: true,
+          autogenerate: { directory: "实习就业" },
+        },
+        {
           label: "🚀 新手入门",
           // collapsed: true,
           autogenerate: { directory: "新手入门" },
@@ -59,11 +64,6 @@ export default defineConfig({
           label: "💻 前端开发",
           // collapsed: true,
           autogenerate: { directory: "前端开发" },
-        },
-        {
-          label: "💼 实习就业",
-          // collapsed: true,
-          autogenerate: { directory: "实习就业" },
         },
         {
           label: "🔍 转载文章",
