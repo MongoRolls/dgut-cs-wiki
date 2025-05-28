@@ -1,5 +1,5 @@
 ---
-title: 🔶 算法(面向找工作)
+title: 算法(面向找工作)
 description: 算法学习路线
 author: 红神
 ---

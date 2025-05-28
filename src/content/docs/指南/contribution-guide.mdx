@@ -5,6 +5,7 @@ author: 芒果
 ---
 
 import { FileTree } from "@astrojs/starlight/components";
+import { Steps } from "@astrojs/starlight/components";
 
 ## 项目文档结构
 
@@ -48,13 +49,26 @@ description: 贡献指南
 
 ## 项目启动
 
-```bash
-pnpm install
-pnpm dev
-```
+<Steps>
 
-即可在本地访问，push 分支前最好 build 一下,检查语法错误
+1. 安装必要的开发环境
 
-```bash
-pnpm build
-```
+   - 安装 Node.js
+   - 安装 pnpm
+
+2. 安装项目依赖并启动开发服务器
+
+   ```bash
+   pnpm install
+   pnpm dev
+   ```
+
+   执行完上述命令后即可在本地启动项目
+
+3. 构建项目
+   ```bash
+   pnpm build
+   ```
+   此命令会检查项目语法错误并生成生产环境代码
+
+</Steps>

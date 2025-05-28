@@ -1,5 +1,5 @@
 ---
-title: 半糖 - 后端实习认知
+title: 后端实习认知
 description: 后端实习认知
 author: 半糖
 ---

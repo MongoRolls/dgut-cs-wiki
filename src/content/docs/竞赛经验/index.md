@@ -1,5 +1,5 @@
 ---
-title: 🏆 竞赛经验
+title: 竞赛经验
 description: 计算机相关竞赛经验分享
 ---
 

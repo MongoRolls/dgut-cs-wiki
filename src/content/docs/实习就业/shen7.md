@@ -1,5 +1,5 @@
 ---
-title: 沈七 - 找实习分享
+title: 前端找实习分享
 description: 找实习经验分享
 ---
 

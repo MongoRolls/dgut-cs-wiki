@@ -1,6 +1,4 @@
-
-@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.11/katex.min.css');
-
+@import url("https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.11/katex.min.css");
 
 @tailwind base;
 @tailwind components;
@@ -21,7 +19,7 @@
   --sl-color-black: #17181c;
 }
 /* Light mode colors. */
-:root[data-theme='light'] {
+:root[data-theme="light"] {
   --sl-color-accent-low: #c7d6ff;
   --sl-color-accent: #364bff;
   --sl-color-accent-high: #182775;
@@ -34,4 +32,28 @@
   --sl-color-gray-6: #eceef2;
   --sl-color-gray-7: #f5f6f8;
   --sl-color-black: #ffffff;
+}
+
+/* 图片基础样式 */
+img {
+  @apply rounded-lg transition-all duration-300 ease-in-out;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 图片加载动画 */
+img {
+  @apply bg-gray-100;
+  animation: image-loading 0.5s ease-in-out;
+}
+
+@keyframes image-loading {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

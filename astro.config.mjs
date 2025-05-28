@@ -35,53 +35,53 @@ export default defineConfig({
       lastUpdated: true,
       sidebar: [
         {
-          label: "📖 前言",
+          label: "指南",
           // 默认折叠
           // collapsed: true,
-          autogenerate: { directory: "前言" },
+          autogenerate: { directory: "指南" },
         },
         {
-          label: "💼 实习就业",
+          label: "实习就业",
           // collapsed: true,
           autogenerate: { directory: "实习就业" },
         },
         {
-          label: "🚀 新手入门",
+          label: "新手入门",
           // collapsed: true,
           autogenerate: { directory: "新手入门" },
         },
         {
-          label: "📚 计算机基础",
+          label: "计算机基础",
           // collapsed: true,
           autogenerate: { directory: "计算机基础" },
         },
         {
-          label: "🌐 后端开发",
+          label: "后端开发",
           collapsed: true,
           autogenerate: { directory: "后端开发" },
         },
         {
-          label: "💻 前端开发",
+          label: "前端开发",
           // collapsed: true,
           autogenerate: { directory: "前端开发" },
         },
         {
-          label: "🔍 转载文章",
+          label: "转载文章",
           collapsed: true,
           autogenerate: { directory: "转载文章" },
         },
         {
-          label: "🏆 竞赛经验",
+          label: "竞赛经验",
           collapsed: true,
           autogenerate: { directory: "竞赛经验" },
         },
         {
-          label: "🎓 考研经验",
-          collapsed: true,
+          label: "考研经验",
+          // collapsed: true,
           autogenerate: { directory: "考研经验" },
         },
         {
-          label: "🌍 考公留学",
+          label: "考公留学",
           collapsed: true,
           autogenerate: { directory: "考公留学" },
         },
