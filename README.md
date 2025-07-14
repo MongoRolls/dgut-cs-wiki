@@ -1,7 +1,6 @@
 # DGUT CS WIKI
 
-Ciallo ～(∠・ω< )⌒⭐  
-你好哇！欢迎来到 DGUT-CS-WIKI，这里是东莞理工学院计算机学习指南。
+项目灵感：[HAUE-CS-WIKI](https://github.com/haueosc/haue-cs-wiki)
 
 在这里，我们有：
 
@@ -49,11 +48,6 @@ pnpm dev
 - 图片等资源可直接放在 `public` 目录下，使用`/`路径
 - commit会触发eslint检查，请确保无语法错误
 
-## 交流群
-
-- 实习就业群
-- 前端交流群
-- 后端交流群
 
 ## 特别鸣谢
 
