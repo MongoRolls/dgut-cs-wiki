@@ -1,6 +1,6 @@
 # DGUT CS WIKI
 
-项目灵感：[HAUE-CS-WIKI](https://github.com/haueosc/haue-cs-wiki)
+inspired by [0xffff.wiki](https://github.com/0xffff-one/0xffff-wiki),[HAUE-CS-WIKI](https://github.com/haueosc/haue-cs-wiki)
 
 在这里，我们有：
 
@@ -30,23 +30,9 @@ pnpm install
 pnpm dev
 ```
 
-## 成为贡献者
+## 贡献者
 
-贡献步骤：
 
-提交文件到邮箱或在github上提交PR
-
-1. Fork 本项目到你的仓库
-2. 克隆你的仓库到本地
-3. 创建新的分支进行修改
-4. 提交 PR
-
-注意事项：
-
-- 请确保提交的内容符合项目规范
-- 新增内容请在适当的目录下创建 md 或者 mdx 文件
-- 图片等资源可直接放在 `public` 目录下，使用`/`路径
-- commit会触发eslint检查，请确保无语法错误
 
 
 ## 特别鸣谢
