@@ -1,0 +1,33 @@
+name: Dependency audit
+'on':
+  pull_request: null
+  push:
+    branches:
+    - main
+  schedule:
+  - cron: 17 6 * * 1
+  workflow_dispatch: null
+permissions:
+  contents: read
+jobs:
+  audit-1:
+    name: Audit .
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: .
+    env:
+      COREPACK_ENABLE_PROJECT_SPEC: '0'
+      npm_config_manage_package_manager_versions: 'false'
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        persist-credentials: false
+    - uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+    - name: Audit dependency metadata (no lifecycle scripts)
+      run: 'npm install --global --ignore-scripts pnpm@10.28.2
+
+        pnpm audit --audit-level=low --registry=https://registry.npmjs.org'
